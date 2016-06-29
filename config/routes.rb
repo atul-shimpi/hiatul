@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :personal_details
 
   root 'candidates#index'
-
+  get 'order' => 'thanks#index'
 
 
   #devise_for :users
