@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   #devise_for :users
   devise_for :users, :controllers => {:registrations => 'users/registrations', :sessions => 'users/sessions'}
-  get 'users' => 'candidates#users'
+  get 'users' => 'candidates#index'
   get 'candidates/new' => 'candidates#new'
   get 'candidates/:id/on-board-info' => 'on_board_info#index', as: :on_board
   post 'candidates/create' => 'candidates#create'
