@@ -1,0 +1,82 @@
+<h4 style="color: gray">Employee Name : <%= current_user.full_name %></h4>
+<% if current_user.role_id == 3 %>
+  <%= render '/page_title', :title => 'Complete on-boarding information' %>
+<% else %>
+    <br>
+    <div class="section-heading-hr">General Information</div>
+<% end %>
+<table width="40%">
+  <th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </th>
+  <tr>
+    <td><%= link_to 'Personal Information', new_personal_detail_path %></td>
+    <% if current_user.role_id == 3 %>
+    <td style="color: forestgreen"><%= image_tag 'completed.png' %>  Completed</td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <td><%= link_to 'Official Information', new_personal_detail_path %></td>
+    <% if current_user.role_id == 3 %>
+    <td style="color: forestgreen"><%= image_tag 'completed.png' %>  Completed</td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <td><%= link_to 'Address(es)', new_address_path %></td>
+    <% if current_user.role_id == 3 %>
+    <td style="color: darkorange"><%= image_tag 'pending.png' %>  Pending</td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <td><%= link_to 'Family', new_personal_detail_path %></td>
+    <% if current_user.role_id == 3 %>
+    <td style="color: darkorange"><%= image_tag 'pending.png' %>  Pending</td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <td><%= link_to 'Education', new_personal_detail_path %></td>
+    <% if current_user.role_id == 3 %>
+    <td style="color: darkorange"><%= image_tag 'pending.png' %>  Pending</td>
+    <% end %>
+  </tr>
+</table>
+<br>
+<% if current_user.role_id != 3 %>
+    <div class="section-heading-hr">Forms</div>
+    <table width="40%">
+      <th>
+        <td></td>
+        <td></td>
+        <td></td>
+      </th>
+      <tr>
+        <td>Application<br></td>
+        <td><%= link_to 'View', candidate_app_form_path %><br></td>
+        <td><%= link_to 'Print', candidate_app_form_path %><br></td>
+      <tr>
+
+      <tr>
+        <td>Reference Check<br></td>
+        <td><%= link_to 'View', candidate_app_form_path %><br></td>
+        <td><%= link_to 'Print', candidate_app_form_path %><br></td>
+      <tr>
+
+      <tr>
+        <td>New Joining<br></td>
+        <td><%= link_to 'View', candidate_app_form_path %><br></td>
+        <td><%= link_to 'Print', candidate_app_form_path %><br></td>
+      <tr>
+    </table>
+    <br><br>
+<% end %>
+
+<% if current_user.role_id != 3 %>
+  <%= link_to 'Back', :back %>
+<% end %>

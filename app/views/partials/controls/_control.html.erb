@@ -1,0 +1,15 @@
+<% case control_name %>
+  <% when :submit %>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= myform.submit(label_text, label_params) %>
+      </div>
+    </div>
+  <% else %>
+    <div class="form-group">
+      <%= myform.label(label_text, label_params) %>
+      <div class="col-sm-6">
+        <%= myform.send(control_name, attr_name, input_params) %>
+      </div>
+    </div>
+<% end %>

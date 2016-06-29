@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+Hello <%= @candidate.full_name %>,
+<p>
+Please sign-in to <%= link_to 'On-Board', on_board_url(id: @candidate) %> to enter you information in the system to complete your
+on-boarding process at Vibrant Technologies.<p>
+<b>Credentials</b><br>
+User Name : <%= @candidate.email %><br>
+Password : <%= @candidate.password %><br>
+</body>
+</html>

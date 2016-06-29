@@ -1,0 +1,2 @@
+module ApplicationsFormsHelper
+end

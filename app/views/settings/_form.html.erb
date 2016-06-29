@@ -1,0 +1,67 @@
+<%= form_for(@setting, :html => {:class=>'form-horizontal'}) do |f| %>
+  <% if @setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+
+      <ul>
+      <% @setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group col-lg-10">
+      <%= f.label :"Send emails from", :class=>'col-sm-3 control-label' %>
+      <div class="col-sm-4">
+        <%= f.text_field :sender, :value => 'sameer_shimpi@vibrant.com', :autofocus => 'true', :class=>'form-control input-sm' %>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-10">
+      <%= f.label :"Keep cc to", :class=>'col-sm-3 control-label' %>
+      <div class="col-sm-4">
+        <%= f.text_field :cc, :value => 'recruitment@vibrant.com', :class=>'form-control input-sm' %>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-10">
+      <%= f.label :"Keep bcc to", :class=>'col-sm-3 control-label' %>
+      <div class="col-sm-4">
+        <%= f.text_field :bcc, :value => 'admin@vibrant.com', :class=>'form-control input-sm' %>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-10">
+      <%= f.label :"Subject", :class=>'col-sm-3 control-label' %>
+      <div class="col-sm-8">
+        <%= f.text_field :subject, :value => 'Complete On-Board Information', :class=>'form-control input-sm' %>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-10">
+      <%= f.label :"Body", :class=>'col-sm-3 control-label' %>
+      <div class="col-sm-8">
+        <%= f.text_area :body, :value => "Dear %candidate_name%\nPlease log in to below link and enter your information to complete the ob-boarding process at Vibrant Technologies..", :rows => 10, :class=>'form-control input-sm' %>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-10">
+      <%= f.label :signature, :class=>'col-sm-3 control-label' %>
+      <div class="col-sm-8">
+        <%= f.text_area :signature, :value => "With Regards\nHr Team\nVibrant Technologies,Pune", :rows => 4, :class=>'form-control input-sm' %>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-10">
+      <%= f.label :"Validity", :class=>'col-sm-3 control-label' %>
+      <div class="col-sm-1">
+        <%= f.text_field :expiry, :value => '1', :class=>'form-control input-sm' %>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-8">
+      <%= f.submit "Save", :class=>"btn btn-primary btn-md" %>
+      <%= link_to 'Cancel', :back %>
+    </div>
+<% end %>

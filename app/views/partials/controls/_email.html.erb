@@ -1,0 +1,16 @@
+<div class="form-group">
+  <% if myform.nil? %>
+  <% else %>
+      <%= f.label :email,
+                  :class=>'col-sm-2 control-label'
+      %>
+
+      <div class="col-sm-6">
+        <%= f.email_field :email,
+                          :class=>'form-control input-sm',
+                          value: 'sameer_shimpi@hotmail.com',
+                          :size=>10, autofocus: true
+        %>
+      </div>
+  <% end %>
+</div>

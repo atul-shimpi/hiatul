@@ -1,0 +1,56 @@
+<h3 style="color: rgb(168,168,168)">Sign In</h3>
+<%= form_for(resource,
+             as: resource_name,
+             url: session_path(resource_name),
+             :html => {:class=>'form-horizontal'}
+             )  do |login_form|
+%>
+     <!--Email-->
+     <%= render 'partials/controls/control',
+                    myform: login_form,
+                    label_text: :email,
+                    label_params: {class: 'col-sm-2 control-label'},
+                    control_name: 'email_field',
+                    attr_name: :email,
+                    input_params: {class: 'form-control input-sm',
+                                   size: 10,
+                                   autofocus: true
+                                  }
+     %>
+
+    <!--Password-->
+    <%= render 'partials/controls/control',
+               myform: login_form,
+               label_text: :password,
+               label_params: {class: 'col-sm-2 control-label'},
+               control_name: 'password_field',
+               attr_name: :password,
+               input_params: {class: 'form-control input-sm',
+                              autocomplete: "off"
+                             }
+
+    %>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= login_form.check_box :remember_me %>
+          <%= login_form.label :remember_me %>
+        </div>
+      <% end -%>
+      </div>
+    </div>
+
+    <!--Sign In-->
+    <%= render 'partials/controls/control',
+               myform: login_form,
+               label_text: 'Sign in',
+               label_params: {class: 'btn btn-primary'},
+               control_name: :submit
+    %>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html style="background-color: white">
+<head>
+  <title>On-Board</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background-color: white">
+
+<div id = 'image'></div>
+<div id="verticalLine"></div>
+ <div id = 'credentials-background'>
+
+  <h2 style="color: mediumseagreen">Vibrant Technologies Ltd</h2>
+  <div id = 'credentials-form'>
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>

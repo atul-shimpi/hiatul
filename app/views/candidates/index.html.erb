@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    //document.getElementById("home_menu").style.borderBottom = "2px solid mediumseagreen";
+     change_menu("home_menu")
+</script>
+<%= render '/page_title', :title => 'Candidates' %>
+<%= link_to 'New', candidates_new_path  %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.created_at.to_formatted_s(:long)
+        %></td>
+        <td><%= link_to candidate.full_name, on_board_url(id: candidate)%></td>
+        <td><%= candidate.email %></td>
+        <% mobile = '' %>
+        <% candidate.contacts.each do |contact| %>
+          <% mobile = contact.value if contact.mobile? %>
+        <td><%= mobile %></td>
+        <% end %>
+        <% status = CandiateStatus.find_by_user_id(candidate.id) %>
+        <% if status.status == 3 %>
+            <td style="color: green"><%= status.comments %></td>
+        <% else %>
+        <td><%= status.comments %></td>
+        <% end %>
+        <td><%= link_to 'Edit', on_board_url(id: candidate) %> </td>
+        <td><%= button_to "Delete", new_user_registration_path, {class: 'btn btn-xs btn-danger'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
