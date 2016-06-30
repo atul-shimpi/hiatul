@@ -17,7 +17,8 @@ GendersMaster.create(name: 'Female')
 GendersMaster.create(name: 'Other')
 
 # Users
-User.create(first_name: 'Sameer', middle_name: 'Raghunath', last_name: 'Shimpi', role_id: 1, email: 'sameer_shimpi@hotmail.com', password: 'Sameer@1506')
+User.create(first_name: 'Sameer', middle_name: 'Raghunath', last_name: 'Shimpi', role_id: 1, email: 'admin@hotmail.com', password: 'admin1234')
+#User.create(first_name: 'Tom', middle_name: 'Raghunath', last_name: 'Duke', role_id: 1, email: 'admin@hotmail.com', password: 'admin')
 #User.create(first_name: 'Atul', middle_name: 'Raghunath', last_name: 'Shimpi', role_id: 2, email: 'shimpiatul@hotmail.com', password: 'Atul@1506')
 #User.create(first_name: 'Himanshu',  last_name: 'Ghag', role_id: 3, email: 'himanshu_ghag@hotmail.com', password: 'Himanshu@1506')
 #User.create(first_name: 'Shushobhan', last_name: 'Shimpi', role_id: 3, email: 'shobhan_shimpi@hotmail.com', password: 'Shobhan@1506')
