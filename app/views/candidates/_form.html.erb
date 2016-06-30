@@ -19,25 +19,42 @@
     %>
 
         <div class="form-group col-lg-8 required ">
-          <%= f.label :company_name, :class=>'col-sm-2 control-label' %>
+          <%= f.label :company_name, :class=>'col-sm-3 control-label' %>
           <div class="col-sm-6">
             <%= f.text_field :first_name,  :class=>'form-control input-sm', :size=>10, autofocus: true %>
           </div>
         </div>
 
         <div class="form-group col-lg-8 required">
-          <%= f.label :email, :class=>'col-sm-2 control-label' %>
+          <%= f.label :email, :class=>'col-sm-3 control-label' %>
           <div class="col-sm-6">
             <%= f.email_field :email, :class=>'form-control input-sm', :size=>10 %>
           </div>
         </div>
 
         <div class="form-group col-lg-8 required">
-          <%= f.label :url, :class=>'col-sm-2 control-label' %>
+          <%= f.label :url, :class=>'col-sm-3 control-label' %>
           <div class="col-sm-6">
             <%= f.email_field :email, :class=>'form-control input-sm', :size=>10 %>
           </div>
         </div>
+
+        <div class="form-group col-lg-8 required">
+          <%= f.label :theme, :class=>'col-sm-3 control-label' %>
+          <div class="col-sm-6">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select Theme
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Green</a></li>
+                <li><a href="#">Maroon</a></li>
+                <li><a href="#">Classic</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
 
         <div class="form-group col-lg-8">
           <div class="col-sm-offset-2 col-sm-10">
